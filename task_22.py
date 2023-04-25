@@ -32,3 +32,9 @@ kool = list(lok)
 kool.sort()
 for i in kool:
   print(i, end=' ')
+
+
+# решение преподавателя
+nums1 = [1,2,1,3,4]
+nums2 = [1,10,5,3]
+print(set(nums1).intersection(set(nums2)))
