@@ -22,14 +22,30 @@ else:
 print(res, 'ягод')
 
 # эталонное решение
-n = int(input())
-arr = list()
-for i in range(n):
-    x = int(input())
-    arr.append(x)
+# n = int(input())
+# arr = list()
+# for i in range(n):
+#     x = int(input())
+#     arr.append(x)
 
-arr_count = list()
-for i in range(len(arr) - 1):
-    arr_count.append(a[i - 1] + arr[i] + arr[i + 1])
-arr_count.append(arr[-2] + arr[-1] + arr[0])
-print(max(arr_count))
+# arr_count = list()
+# for i in range(len(arr) - 1):
+#     arr_count.append(a[i - 1] + arr[i] + arr[i + 1])
+# arr_count.append(arr[-2] + arr[-1] + arr[0])
+# print(max(arr_count))
+
+
+# решение преподавателя
+
+bushes = [1, 3, 2, 1, 1, 6]
+max_berries = 0
+for i in range(-2, len(bushes)-2):
+    print(bushes[i], bushes[i+1], bushes[i+2])
+    if sum((bushes[i], bushes[i+1], bushes[i+2])) > max_berries:
+        max_berries = sum((bushes[i], bushes[i+1], bushes[i+2]))
+print(max_berries)
+
+# list comprehension
+
+print(max(sum((bushes[i], bushes[i+1], bushes[i+2]))
+      for i in range(-2, len(bushes)-2)))
